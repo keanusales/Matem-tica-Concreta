@@ -35,7 +35,7 @@ int main()
         s1[i] = j + 1;
         for(j = 0; j < 100; j++)
         {
-            if (v1[rm(99-j)] != v2[rm(99-j)]) break;
+            if (v1[rm(rm(j))] != v2[rm(rm(j))]) break;
         }
         s2[i] = j + 1;
     }
