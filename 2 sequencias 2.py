@@ -1,27 +1,27 @@
 import random
-v1, v2, = [], []
-
-
-def rdm(k):
-    a = 0
-    vet = []
-    while a < 100:
-        c = random.randint(0, 100)
-        vet.include(a, c)
-        ig = 0
-        for b in range(a):
-            if vet[b] == vet[a]: ig = 1
-        if ig == 0: a = a + 1
-    return vet[k]
-
-
+vt, v1, v2 = [], [], []
+s1, s2, f1, f2 = [], [], 0, 0
+for a in range(100):
+    vt.insert(a, a)
 for i in range(100):
+    random.shuffle(vt)
     for j in range(100):
         v1.insert(j, 0)
         v2.insert(j, 0)
-    v1.insert(rdm(i), 1)
-    for j in v1:
-        print(v1[j], end=" ")
-    print("")
-    for j in v2:
-        print(v2[j], end=" ")
+    v1.insert(vt[i], 1)
+    for j in range(100):
+        if v1[j] != v2[j]:
+            s1.insert(i, j + 1)
+            break
+    random.shuffle(vt)
+    for j in range(100):
+        if v1[vt[j]] != v2[vt[j]]:
+            s2.insert(i, j + 1)
+            break
+for i in range(100):
+    f1 = f1 + s1[i]
+    f2 = f2 + s2[i]
+f1 = f1 / 100
+f2 = f2 / 100
+print("Sequencialmente a média foi:", f1)
+print("Aleatoriamente a média foi:", f2)

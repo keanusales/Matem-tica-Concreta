@@ -30,15 +30,25 @@ int main()
         v1[rm(i)] = 1;
         for(j = 0; j < 100; j++)
         {
-            if (v1[j] != v2[j]) break;
+            if (v1[j] != v2[j])
+                {s1[i] = j + 1; break;}
         }
-        s1[i] = j + 1;
         for(j = 0; j < 100; j++)
         {
-            if (v1[rm(rm(j))] != v2[rm(rm(j))]) break;
+            if (v1[rm(rm(j))] != v2[rm(rm(j))])
+                {s2[i] = j + 1; break;}
         }
-        s2[i] = j + 1;
     }
+    for(i = 0; i < 100; i++)
+    {
+        cout << s1[i] << " ";
+    }
+    cout << endl;
+    for(i = 0; i < 100; i++)
+    {
+        cout << s2[i] << " ";
+    }
+    cout << endl;
     for (i = 0; i < 100; i++)
     {
         f1 = f1 + s1[i];
