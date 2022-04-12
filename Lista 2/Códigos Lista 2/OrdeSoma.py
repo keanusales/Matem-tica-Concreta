@@ -1,6 +1,6 @@
 n, s1, s2, s3 = int(input("Entre com o tamanho n: ")), 0, 0, 0
 x, y, v = int(input("Valor de x: ")), int(input("Valor de y: ")), []
-if x + y < n > 10 and y > x > 2:
+if x + y < n > 10 and y > x > 1:
     for i in range(n):
         v.append(float(input("Digite o {}º termo: ".format(i+1))))
     for i in range(x):
@@ -33,4 +33,4 @@ if x + y < n > 10 and y > x > 2:
         else:
             print("A parte com a 2ª maior soma é:", v[x:y])
             print("A parte com a 3ª maior soma é:", v[:x])
-else: print("Digite valores inteiros onde y > x > 2 e x + y < n > 10!")
+else: print("Digite valores inteiros onde y > x > 1 e x + y < n > 10!")
