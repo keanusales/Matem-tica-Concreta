@@ -2,7 +2,7 @@ import os
 from math import comb
 os.system("cls||clear")
 width = os.get_terminal_size().columns
-r = int(input("Digite o valor de r: "))
+r = int(input("Digite o valor de n: "))
 saida = []; os.system("cls||clear")
 for i in range(r+1):
   for j in range(i+1):
