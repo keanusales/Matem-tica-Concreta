@@ -15,21 +15,22 @@ def countclasses(tabela):
 
 def countypes(tabela, classes):
   class1, class2, totais = [], [], []
+  p = len(tabela[0]) - 1
   keys = list(classes.keys())
-  for i in range(len(tabela[0]) - 1):
+  for i in range(p):
     class1.append({}); class2.append({}); totais.append({})
   class1.append(keys[0]); class2.append(keys[1])
   for linha in tabela:
     if linha[-1] in classes:
-      for i in range(len(linha)-1):
+      for i in range(p):
         if linha[i] in totais[i]: totais[i][linha[i]] += 1
         else: totais[i][linha[i]] = 1
       if linha[-1] == keys[0]:
-        for i in range(len(linha)-1):
+        for i in range(p):
           if linha[i] in class1[i]: class1[i][linha[i]] += 1
           else: class1[i][linha[i]] = 1
       else:
-        for i in range(len(linha)-1):
+        for i in range(p):
           if linha[i] in class2[i]: class2[i][linha[i]] += 1
           else: class2[i][linha[i]] = 1
   for i in range(len(totais)): totais[i] = len(totais[i])

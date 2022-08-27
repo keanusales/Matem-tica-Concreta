@@ -1,7 +1,13 @@
-import os, funçõesbayes as ftn
-os.system("cls||clear")
-vector1 = []
+from os import system
+import funçõesbayes as ftn
+system("cls||clear"); vector1 = []
 tabela = ftn.openarch("dataset02.csv")
+classes = ftn.countclasses(tabela)
+class1, class2 = ftn.classaverage(tabela, classes)
+varin1, varin2 = ftn.classvariance(tabela, classes)
+defdev1, defdev2 = ftn.classdeviation(tabela, classes)
+print(f"{classes}\n{class1}\n{class2}")
+print(f"{varin1}\n{varin2}\n{defdev1}\n{defdev2}")
 limit = int(len(tabela)*0.7) + 1
 for i in range(limit, len(tabela)):
   vector1.append(tabela[i][-1])
